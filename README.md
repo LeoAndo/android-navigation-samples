@@ -25,3 +25,8 @@ https://github.com/LeoAndo/android-navigation-samples/pulls?q=is%3Apr+is%3Aclose
 
 https://developer.android.com/guide/navigation?hl=ja<br>
 https://github.com/LeoAndo/AndroidAppTemplate<br>
+
+# appendix (For Java)
+
+progress barの実装は、以下を参考にアプリ作成を行ってください。<br>
+https://github.com/LeoAndo/android-navigation-samples/pulls?q=is%3Apr+is%3Aclosed+label%3Ajava-progress-bar-coding-flow
