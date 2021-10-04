@@ -13,4 +13,28 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- style: BottomSheetDialog START-->
+    <style name="Widget.NavigationJavaSample.BottomSheet.Contents" parent="">
+        <item name="android:minHeight">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="ThemeOverlay.NavigationJavaSample.BottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.NavigationJavaSample.BottomSheet</item>
+    </style>
+
+    <style name="Widget.NavigationJavaSample.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay.NavigationJavaSample.BottomSheetDialog
+        </item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.NavigationJavaSample" parent="" />
+
+    <style name="ShapeAppearanceOverlay.NavigationJavaSample.BottomSheetDialog">
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopLeft">12dp</item>
+        <item name="cornerSizeTopRight">12dp</item>
+    </style>
+    <!-- style: BottomSheetDialog END-->
 </resources>
