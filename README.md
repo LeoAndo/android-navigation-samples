@@ -1,6 +1,7 @@
 # Overview
 
-このリポジトリでは、Navigation Graphを使用した「Single Activity + Fragment」で作るシンプルなAndroidアプリケーションのサンプルを収めています。
+このリポジトリでは、Navigation Graphを使用した「Single Activity + Fragment」で作るシンプルなAndroidアプリケーションのサンプルを収めています。<br>
+jetpackが提供するNavigationを使うと、画面遷移の処理、特にFragmentの遷移が楽になるのでおすすめです。<br>
 
 # development environment
 
