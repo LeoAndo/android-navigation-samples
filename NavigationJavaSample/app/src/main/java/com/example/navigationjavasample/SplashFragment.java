@@ -14,6 +14,7 @@ import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
 public class SplashFragment extends Fragment {
     private FragmentSplashBinding binding = null;
+
     public SplashFragment() {
         super(R.layout.fragment_splash);
     }
@@ -24,16 +25,23 @@ public class SplashFragment extends Fragment {
         binding = FragmentSplashBinding.bind(view);
         binding.animationView.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
-            public void onAnimationStart(Animator animation) { }
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                findNavController(SplashFragment.this).navigate(R.id.action_splashFragment_to_loginFragment);
+            public void onAnimationStart(Animator animation) {
             }
-            @Override
-            public void onAnimationCancel(Animator animation) { }
 
             @Override
-            public void onAnimationRepeat(Animator animation) { }
+            public void onAnimationEnd(Animator animation) {
+                findNavController(SplashFragment.this).navigate(
+                        SplashFragmentDirections.actionSplashFragmentToLoginFragment()
+                );
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
         });
     }
 
