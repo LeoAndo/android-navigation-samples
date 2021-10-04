@@ -1,30 +1,60 @@
 package com.example.navigationjavasample;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.LayoutInflater;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.navigationjavasample.databinding.ActivityMainBinding;
 
+import java.util.Objects;
+
+public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
+    private NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+        binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
+        setSupportActionBar(binding.toolbar);
+        initNavController();
+        observeDestination();
+    }
+    private void observeDestination() {
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> updateContent(destination.getId()));
+    }
+
+    private void initNavController() {
+        NavHostFragment host  = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        navController = Objects.requireNonNull(host).getNavController();
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+        binding.navView.inflateMenu(R.menu.bottom_nav_menu);
+        NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
+    @SuppressLint("NonConstantResourceId")
+    private void updateContent (int destinationId) {
+        switch (destinationId) {
+            case R.id.splashFragment :
+            case R.id.loginFragment :
+                Objects.requireNonNull(getSupportActionBar()).hide();
+                binding.navView.setVisibility(View.GONE);
+                break;
+            default:
+                Objects.requireNonNull(getSupportActionBar()).show();
+                binding.navView.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
 }
