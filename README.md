@@ -22,4 +22,5 @@ https://github.com/LeoAndo/android-navigation-samples/pulls?q=is%3Apr+is%3Aclose
 
 # refs
 
-https://developer.android.com/guide/navigation?hl=ja
+https://developer.android.com/guide/navigation?hl=ja<br>
+https://github.com/LeoAndo/AndroidAppTemplate<br>
