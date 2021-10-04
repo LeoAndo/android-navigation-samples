@@ -14,7 +14,7 @@
 
 # coding flow (For Java)
 以下の手順に沿って、Navigation Graphを使ったアプリ作成を行ってください。<br>
-
+https://github.com/LeoAndo/android-navigation-samples/pulls?q=is%3Apr+is%3Aclosed+label%3Ajava-navigation-coding-flow
 
 # coding flow (For Kotlin)
 以下の手順に沿って、Navigation Graphを使ったアプリ作成を行ってください。<br>
