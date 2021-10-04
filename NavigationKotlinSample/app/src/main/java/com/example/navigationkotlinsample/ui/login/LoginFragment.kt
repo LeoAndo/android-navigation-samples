@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 
 import com.example.navigationkotlinsample.R
 
@@ -40,7 +41,7 @@ class LoginFragment : Fragment() {
         val loginButton = view.findViewById<Button>(R.id.login)
         val loadingProgressBar = view.findViewById<ProgressBar>(R.id.loading)
 
-        loginViewModel.loginFormState.observe(this,
+        loginViewModel.loginFormState.observe(viewLifecycleOwner,
             Observer { loginFormState ->
                 if (loginFormState == null) {
                     return@Observer
@@ -54,7 +55,7 @@ class LoginFragment : Fragment() {
                 }
             })
 
-        loginViewModel.loginResult.observe(this,
+        loginViewModel.loginResult.observe(viewLifecycleOwner,
             Observer { loginResult ->
                 loginResult ?: return@Observer
                 loadingProgressBar.visibility = View.GONE
@@ -106,8 +107,9 @@ class LoginFragment : Fragment() {
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome) + model.displayName
         // TODO : initiate successful logged in experience
-        val appContext = context?.applicationContext ?: return
-        Toast.makeText(appContext, welcome, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), welcome, Toast.LENGTH_LONG).show()
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMobileNavigation())
+
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

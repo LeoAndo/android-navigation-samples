@@ -26,7 +26,6 @@
         <action
             android:id="@+id/action_loginFragment_to_mobile_navigation"
             app:destination="@id/mobile_navigation"
-
             app:popUpTo="@id/init_navigation"
             app:popUpToInclusive="true"
             app:enterAnim="@anim/nav_default_enter_anim"
