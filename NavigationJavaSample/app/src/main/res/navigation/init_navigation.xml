@@ -22,5 +22,14 @@
         android:id="@+id/loginFragment"
         android:name="com.example.navigationjavasample.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mobile_navigation"
+            app:destination="@id/mobile_navigation"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popUpTo="@+id/init_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/mobile_navigation" />
 </navigation>

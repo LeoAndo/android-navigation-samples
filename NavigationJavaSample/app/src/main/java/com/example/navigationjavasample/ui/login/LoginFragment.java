@@ -18,6 +18,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.navigationjavasample.R;
 
+import static androidx.navigation.fragment.NavHostFragment.findNavController;
+
 public class LoginFragment extends Fragment {
 
     private LoginViewModel loginViewModel;
@@ -100,9 +102,10 @@ public class LoginFragment extends Fragment {
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
-        if (getContext() != null && getContext().getApplicationContext() != null) {
-            Toast.makeText(getContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
-        }
+        Toast.makeText(requireContext().getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        findNavController(LoginFragment.this).navigate(
+                LoginFragmentDirections.actionLoginFragmentToMobileNavigation()
+        );
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
