@@ -1,35 +1,31 @@
 package com.example.navigationjavasample.ui.home;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
+import com.example.navigationjavasample.Person;
 import com.example.navigationjavasample.R;
+import com.example.navigationjavasample.databinding.FragmentHomeBinding;
+
+import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
 public class HomeFragment extends Fragment {
+    private FragmentHomeBinding binding;
+    public HomeFragment(){
+        super(R.layout.fragment_home);
+    }
 
-    private HomeViewModel homeViewModel;
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        binding = FragmentHomeBinding.bind(view);
+        final Person person = new Person("Tanaka", 20, 177.7F);
+        binding.btnGoToDetail.setOnClickListener((v) -> {
+            findNavController(HomeFragment.this).navigate(HomeFragmentDirections.actionNavigationHomeToDetailFragment(person));
         });
-        return root;
     }
 }
