@@ -7,6 +7,12 @@ jetpackが提供するNavigationを使うと、画面遷移の処理、特にFra
 
 <img width="686" alt="1" src="https://user-images.githubusercontent.com/16476224/135798910-23c699e6-a787-4d69-8ff0-b5bac4fda250.png">
 
+# capture
+
+| Pixel 3a OS8.0 |
+|:---|
+|<img src="aaaa" width=320 /> |
+
 # Prerequisites
 
 前提として、Android Studioのテンプレートプロジェクトから「Bottom Navigation Activity」を選択しプロジェクトを作成してください。<br>
