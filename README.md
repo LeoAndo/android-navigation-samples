@@ -25,6 +25,8 @@ https://github.com/LeoAndo/android-navigation-samples/pulls?q=is%3Apr+is%3Aclose
 
 # coding flow (For Kotlin)
 以下の手順に沿って、Navigation Graphを使ったアプリ作成を行ってください。<br>
+https://github.com/LeoAndo/android-navigation-samples/commit/45fce091341204ed8864535f4e986279e7431cf4<br>
+
 
 
 # refs
