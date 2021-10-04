@@ -23,7 +23,7 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3 sec show progress" />
+            android:text="1.5 sec show progress" />
     </LinearLayout>
 
     <com.example.navigationjavasample.ProgressIndicatorLayout

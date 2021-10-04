@@ -3,7 +3,6 @@ package com.example.navigationjavasample.ui.notifications;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -27,7 +26,7 @@ public class NotificationsFragment extends Fragment {
             binding.progressIndicatorLayout.show();
             new Handler(Looper.myLooper()).postDelayed(()->{
                 binding.progressIndicatorLayout.hide();
-            }, 3000);
+            }, 1500);
         });
     }
 }
