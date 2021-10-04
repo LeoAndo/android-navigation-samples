@@ -24,7 +24,6 @@ public class NotificationsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         binding = FragmentNotificationsBinding.bind(view);
         binding.button4.setOnClickListener((v)-> {
-            Log.d("AAA", "clicke!!!");
             binding.progressIndicatorLayout.show();
             new Handler(Looper.myLooper()).postDelayed(()->{
                 binding.progressIndicatorLayout.hide();
