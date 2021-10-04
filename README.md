@@ -11,7 +11,7 @@ jetpackが提供するNavigationを使うと、画面遷移の処理、特にFra
 
 | Pixel 3a OS8.0 |
 |:---|
-|<img src="aaaa" width=320 /> |
+|<img src="https://github.com/LeoAndo/android-navigation-samples/blob/main/NavigationJavaSample/capture/capture.gif" width=320 /> |
 
 # Prerequisites
 
