@@ -3,11 +3,11 @@
 このリポジトリでは、Navigation Graphを使用した「Single Activity + Fragment」で作るシンプルなAndroidアプリケーションのサンプルを収めています。<br>
 jetpackが提供するNavigationを使うと、画面遷移の処理、特にFragmentの遷移が楽になるのでおすすめです。<br>
 
-# development environment
+# Development environment
 
 <img width="686" alt="1" src="https://user-images.githubusercontent.com/16476224/135798910-23c699e6-a787-4d69-8ff0-b5bac4fda250.png">
 
-# capture
+# Capture
 
 | Pixel 3a OS8.0 |
 |:---|
